@@ -1,6 +1,8 @@
 package com.hongna.leetcode.Sort;
 
-import java.util.Arrays;
+import com.hongna.leetcode.util.ArrayGenerator;
+import com.hongna.leetcode.util.SortingHelper;
+
 
 public class SelectionSort {
     private SelectionSort(){};
@@ -25,11 +27,8 @@ public class SelectionSort {
     }
 
     public static <E> void main(String[] args) {
-        Integer[] arr = {1,2,8,56,8,2};
-        SelectionSort.sort(arr);
-        for (int i :arr){
-            System.out.println(i);
-            
-        }
+        int n = 10000;
+        Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+        SortingHelper.sortTest("SelectionSort", arr);
     }
 }
