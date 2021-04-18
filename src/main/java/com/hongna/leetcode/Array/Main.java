@@ -14,7 +14,7 @@ public class Main {
         arr.addFirst(20);
         System.out.println(arr);
 
-        int i = arr.get(0);
+        Integer i = (Integer) arr.get(0);
         System.out.println(i);
 
         arr.set(0, 10);

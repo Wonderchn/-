@@ -5,6 +5,17 @@ public class Array<E> {
     private E[] data;
     private int size;
 
+
+    public static void main(String[] args) {
+        Array<Object> array = new Array<>();
+        for (int i = 0;i<20;i++){
+            array.addLast(i);
+        }
+        System.out.println(array);
+        array.removeFirst();
+        System.out.println(array);
+    }
+
     //构造函数,传入数组容量capacity构造Array
     public Array(int capacity) {
         this.data = (E[]) new Object[capacity];
@@ -46,18 +57,28 @@ public class Array<E> {
         if (index <0 || index >size){
             throw new IllegalArgumentException("Add failed");
         }
-        if (size == data.length){
-            throw new IllegalArgumentException("Add failed");
-        }
         for (int i = size-1 ; i>=index ; i--){
             data[i+1] = data[i];
         }
         data[index] = e;
         size ++;
+        if (size == data.length){
+            resize(2 * data.length);
+        }
+    }
+
+
+    private void resize(int newCapacity){
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i =0 ;i<size;i++){
+            newData[i] = data[i];
+
+        }
+        data = newData;
     }
 
     //获取index索引位置的元素
-    E get(int index){
+    public E get(int index){
         if (index < 0 || index > size){
             throw new IllegalArgumentException("Get failed ,Index is illegal");
         }
@@ -94,6 +115,7 @@ public class Array<E> {
 
     //从数组中删除Index位置的元素，返回删除的元素
     public E remove(int index){
+
         if (index < 0 || index >=size){
             throw  new IllegalArgumentException("Remove failed");
         }
@@ -102,6 +124,9 @@ public class Array<E> {
             data[i-1]  = data[i];
         }
         size--;
+        if (size == data.length/4){
+            resize(data.length/2);
+        }
         return  ret;
 
     }
@@ -123,7 +148,14 @@ public class Array<E> {
             remove(index);
         }
     }
+    public E getLast(){
+        return get(size -1);
+    }
 
+    public E getFirst(){
+        return  get(0);
+
+    }
 
     @Override
     public String toString(){
