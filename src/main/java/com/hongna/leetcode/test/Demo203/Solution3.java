@@ -3,8 +3,8 @@ package com.hongna.leetcode.test.Demo203;
 public class Solution3 {
     public ListNode removeElements(ListNode head, int val) {
         if (head == null){
-            return null;
-        }
+            return  null;
+    }
         ListNode nextNode = removeElements(head.next, val);
         if (head.val == val){
             return nextNode;
@@ -12,8 +12,8 @@ public class Solution3 {
         else {
             head.next = nextNode;
             return head;
-        }
 
+        }
     }
     public static void main(String[] args) {
         int[] nums = {1,2,6};
