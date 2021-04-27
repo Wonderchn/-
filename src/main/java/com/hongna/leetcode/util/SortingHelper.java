@@ -1,6 +1,7 @@
 package com.hongna.leetcode.util;
 
 import com.hongna.leetcode.Sort.InsertSort;
+import com.hongna.leetcode.Sort.QuickSort;
 import com.hongna.leetcode.Sort.SelectionSort;
 
 public class SortingHelper {
@@ -25,7 +26,9 @@ public class SortingHelper {
         }
         if (sortname.equals("InsertionSort")){
             InsertSort.sort(arr);
-
+        }
+        if (sortname.equals("QuickSort")){
+            QuickSort.sort(arr);
         }
         long endTime = System.nanoTime();
         double time = (endTime - startTime) / 1000000000.0;
