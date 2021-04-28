@@ -1,5 +1,6 @@
 package com.hongna.leetcode.List;
 
+
 public class LinkedList<E> {
     private class Node{
         public E e;
@@ -174,6 +175,7 @@ public class LinkedList<E> {
     public E removeFirst(){
         return  remove(0);
     }
+
 
     //从链表中删除最后一个元素，返回翻出的元素
     public E removeLast(){
