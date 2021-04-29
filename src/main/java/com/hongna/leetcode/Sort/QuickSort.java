@@ -92,13 +92,20 @@ public class QuickSort {
 
 
     public static void main(String[] args) {
-        Integer[] integers = new Integer[]{1,0,2};
-        for (int i = 0; i < integers.length; i++) {
-            System.out.print("-"+integers[i]);
+//        Integer[] integers = new Integer[]{1,0,2};
+//        for (int i = 0; i < integers.length; i++) {
+//            System.out.print("-"+integers[i]);
+//        }
+//
+//        SortingHelper.sortTest("QuickSort",integers);
+
+            Integer[]  arr= new Integer[]{2,0,2,1,1,0};
+
+            sort3Ways(arr);
+        for (int i :
+                arr) {
+            System.out.println(i);
         }
-
-        SortingHelper.sortTest("QuickSort",integers);
-
     }
 
 
@@ -137,4 +144,7 @@ public class QuickSort {
         sort3Ways(arr, l, lt-1, rad);
         sort3Ways(arr,gt,r,rad);
     }
+
+
+
 }

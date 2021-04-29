@@ -7,9 +7,9 @@ public class BinarySearch {
 
         int l = 0 , r = data.length -1;
 
-        //在data[l,r ]的范围中查找target
+        //在data[l,r ]的范围中查找target 循环不变量
         while (l <=r){
-            int mid = l + (l -r)/2;
+            int mid = l + (l - r)/2;
             if (data[mid].compareTo(target) == 0){
                 return mid;
             }
@@ -21,6 +21,7 @@ public class BinarySearch {
                 r = mid -1;
 
             }
+
         }
         return -1;
     }
