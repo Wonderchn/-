@@ -26,26 +26,48 @@ public class BinarySearch {
         return -1;
     }
 
+
+    //>target 的最小索引
+    public static <E extends Comparable<E>> int upper(E[]data ,E target){
+        int l = 0;
+        int r = data.length;
+        // 在data[l,r]中寻找解
+        while (l < r){
+             int mid = l +(r - l) / 2;
+             if (data[mid].compareTo(target) <= 0){
+                 l = mid + 1 ;
+             }
+             else {
+                 r = mid;
+
+             }
+
+        }
+        return l;
+
+    }
+
+
     //递归实现二分查找法
-    public static <E extends Comparable<E>> int searchR(E[] data, E target){
-        return searchR(data, 0, data.length - 1, target);
-    }
-    private static <E extends Comparable<E>> int searchR(E[]data, int l , int r, E target){
-        if (l > r){
-            return -1;
-        }
-        int mid = l + (r - l)/2;
-        if (data[mid].compareTo(target) == 0){
-            return mid;
-        }
-        if (data[mid].compareTo(target) < 0){
-            return searchR(data, mid+1, r,target);
-
-        }
-        else{
-            // 此时去查看左侧边界看 是否有二分查找所需的元素
-
-            return searchR(data, l, mid -1,target);
-        }
-    }
+//    public static <E extends Comparable<E>> int searchR(E[] data, E target){
+//        return searchR(data, 0, data.length - 1, target);
+//    }
+//    private static <E extends Comparable<E>> int searchR(E[]data, int l , int r, E target){
+//        if (l > r){
+//            return -1;
+//        }
+//        int mid = l + (r - l)/2;
+//        if (data[mid].compareTo(target) == 0){
+//            return mid;
+//        }
+//        else if (data[mid].compareTo(target) < 0){
+//            return searchR(data, mid+1, r,target);
+//
+//        }
+//        else{
+//            // 此时去查看左侧边界看 是否有二分查找所需的元素
+//
+//            return searchR(data, l, mid -1,target);
+//        }
+//    }
 }

@@ -10,6 +10,15 @@ public class QuickSort {
         Random rad = new Random();
         sort(arr, 0, arr.length-1,rad);
     }
+
+    /**
+     *
+     * @param arr 指的是arr数组
+     * @param l 指的是左边界
+     * @param r 指的是右边界
+     * @param rad 指的是随机数
+     * @param <E>
+     */
     private static <E extends Comparable<E>> void sort(E[] arr,int l ,int r ,Random rad ){
 
         if (l >= r)return;
