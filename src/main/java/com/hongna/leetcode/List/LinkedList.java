@@ -1,6 +1,8 @@
 package com.hongna.leetcode.List;
 
 
+import org.w3c.dom.Node;
+
 public class LinkedList<E> {
     private class Node{
         public E e;
@@ -119,7 +121,23 @@ public class LinkedList<E> {
 
     }
 
+    //从链表中删除元素e
+    public void remoElement(E e){
+        Node prev = dummyHead;
+        while (prev.next != null){
+            if (prev.next.e.equals(e)){
+                break;
+            }
+            prev = prev.next;
+        }
 
+        if (prev.next !=null){
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+
+        }
+    }
     //查找链表中是否有元素e
     public  boolean contains(E  e){
         Node cur = dummyHead.next;
@@ -180,6 +198,5 @@ public class LinkedList<E> {
     //从链表中删除最后一个元素，返回翻出的元素
     public E removeLast(){
         return remove(size -1);
-
     }
 }
