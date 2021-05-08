@@ -14,7 +14,7 @@ public class InsertSort {
 
             //循环不变量是 arr[0,i)已经排序
             //循环体是 swap(arr, j, j-1);
-//            for (int j =i ; i-1 >= 0; i--){
+//            for (int j =i ; i-1 >= 0; j--){
 //                if ( arr[j].compareTo(arr[j-1]) <0){
 //                    swap(arr, j, j-1);
 //                }
