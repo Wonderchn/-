@@ -1,5 +1,6 @@
 package com.hongna.leetcode.util;
 
+import com.hongna.leetcode.Sort.BubbleSort;
 import com.hongna.leetcode.Sort.InsertSort;
 import com.hongna.leetcode.Sort.QuickSort;
 import com.hongna.leetcode.Sort.SelectionSort;
@@ -29,6 +30,9 @@ public class SortingHelper {
         }
         if (sortname.equals("QuickSort")){
             QuickSort.sort(arr);
+        }
+        else if (sortname.equals("BubbleSort")){
+            BubbleSort.sort(arr);
         }
         long endTime = System.nanoTime();
         double time = (endTime - startTime) / 1000000000.0;
