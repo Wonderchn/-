@@ -1,7 +1,6 @@
 package com.hongna.leetcode.Array;
 
 
-import org.omg.CORBA.Object;
 
 public class Array<E> {
 
@@ -165,5 +164,13 @@ public class Array<E> {
         for(int i = 0 ; i < size ; i ++)
             newData[i] = data[i];
         data = newData;
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size-1);
     }
 }
