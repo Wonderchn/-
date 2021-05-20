@@ -55,4 +55,60 @@ public class Trie {
         }
         return cur.isWord;
     }
+
+    // 查询是否在Trie中有单词以prefix为前缀
+    public boolean isPrefix(String prefix){
+        Node cur = root;
+        for (int i = 0 ; i < prefix.length() ; i++){
+            char c = prefix.charAt(i);
+            if (cur.next. get(c) == null){
+                return false;
+            }
+            cur = cur.next.get(c);
+        }
+        return true;
+    }
+
+
+
+    public boolean search(String word){
+        return match(root,word,0);
+    }
+
+
+
+
+
+    //index == word.length
+
+    /**
+     *
+     * @param node
+     * @param word
+     * @param index index作为指针，我们每次递归调用此函数，index作为判断遍历到哪里的依据
+     * @return
+     */
+    private boolean match(Node node,String word,int index){
+        if (index == word.length()){
+            return node.isWord;
+        }
+
+        char c = word.charAt(index);
+        if (c != '.') {
+
+            if (node .next .get(c) == null){
+                return false;
+            }
+            return match(node.next.get(c), word, index+1);
+        }
+        else{
+            for (char nextChar  : node.next.keySet()){
+               if (match(node.next.get(nextChar), word, index+1)){
+                   return true;
+               }
+
+            }
+            return false;
+        }
+    }
 }
