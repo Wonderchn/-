@@ -3,7 +3,7 @@ package com.hongna.leetcode.Tree.RedBlackTree;
 import com.hongna.leetcode.Set.FileOperation;
 
 import java.util.ArrayList;
-
+   
 
 public class RBTree<K extends Comparable<K>, V> {
 
@@ -48,9 +48,10 @@ public class RBTree<K extends Comparable<K>, V> {
 
     }
 
-    // 向二分搜索树中添加新的元素(key, value)
+    // 向红黑树中添加新的元素(key, value)
     public void add(K key, V value){
         root = add(root, key, value);
+        root.color = BLACK;
     }
 
     // 向以node为根的二分搜索树中插入元素(key, value)，递归算法
@@ -72,7 +73,7 @@ public class RBTree<K extends Comparable<K>, V> {
         return node;
     }
 
-    // 返回以node为根节点的二分搜索树中，key所在的节点
+    // 返回以node为根节点的红黑树中，key所在的节点
     private Node getNode(Node node, K key){
 
         if(node == null)

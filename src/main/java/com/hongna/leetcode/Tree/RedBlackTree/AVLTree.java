@@ -20,7 +20,6 @@ public class AVLTree<K extends Comparable<K>, V> {
             left = null;
             right = null;
             height = 1;
-
         }
     }
 
@@ -131,7 +130,7 @@ public class AVLTree<K extends Comparable<K>, V> {
 
 
         // 平衡维护
-        //LL
+        //LL getBalanceFactor(node.left)>0 主要是为了证明avl树是插入进左侧的左侧
         if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0) {
             return rightRotate(node);
 
@@ -374,7 +373,7 @@ public class AVLTree<K extends Comparable<K>, V> {
 
             }
             System.out.println("Total different words: " + map.getSize());
-            System.out.println("Frequency of PRIDE: " + map.get("66"));
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
             System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
             System.out.println("is BST" + map.isBST());
         }
