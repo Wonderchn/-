@@ -15,7 +15,7 @@ public class HashTable<K extends Comparable<K>, V> {
 
     private TreeMap<K, V>[] hashtable;
     private int size;
-    private int M;
+    private int M ;
 
     public HashTable(){
         this.M = capacity[capacityIndex];

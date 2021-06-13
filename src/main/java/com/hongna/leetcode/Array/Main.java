@@ -2,6 +2,7 @@ package com.hongna.leetcode.Array;
 
 import com.hongna.leetcode.Heap.MaxHeap.MaxHeap;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -60,5 +61,8 @@ public class Main {
         }
         double time1 = testHeap(testData, false);
 
+
+        ArrayList<Man> mans = new ArrayList<Man>();
+        mans.add(new Student());
     }
 }
