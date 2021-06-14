@@ -1,4 +1,4 @@
-package com.hongna.leetcode.jianzhi09;
+package com.hongna.leetcode.jianzhi.jianzhi09;
 
 import java.util.Stack;
 
