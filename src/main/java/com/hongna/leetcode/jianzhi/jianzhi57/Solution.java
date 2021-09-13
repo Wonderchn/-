@@ -1,5 +1,8 @@
 package com.hongna.leetcode.jianzhi.jianzhi57;
 
+/**
+ *
+ */
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int i = 0, j = nums.length - 1;
