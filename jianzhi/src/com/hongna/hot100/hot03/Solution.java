@@ -1,4 +1,4 @@
-package com.hongna.hot100.hot03;
+package src.com.hongna.hot100.hot03;
 
 import java.util.HashMap;
 

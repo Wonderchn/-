@@ -32,8 +32,8 @@ class Solution349 {
 
     public int[] intersection(int[] nums1, int[] nums2) {
         //我们使用Set进行数组的便利
-        HashSet<Integer> integers1 = new HashSet<>();
-        HashSet<Integer> integers2 = new HashSet<>();
+        HashSet<Integer> integers1 = new HashSet<Integer>();
+        HashSet<Integer> integers2 = new HashSet<Integer>();
         for (int a :
                 nums1) {
             integers1.add(a);
@@ -51,7 +51,7 @@ class Solution349 {
         if (set1.size() < set2.size()){
             compareAndReturnResult(set2, set1);
         }
-        HashSet<Integer> hashSet = new HashSet<>();
+        HashSet<Integer> hashSet = new HashSet<Integer>();
         for (int i : set1){
             if (set2.contains(i)){
                 hashSet.add(i);
