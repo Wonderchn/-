@@ -1,4 +1,4 @@
-package src.com.hongna.hot100.hot02;
+package com.hongna.hot100.hot02;
 
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
